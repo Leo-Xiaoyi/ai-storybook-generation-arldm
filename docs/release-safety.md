@@ -8,7 +8,7 @@ This repository is prepared as a public GitHub portfolio artifact.
 - Oxford dataset loader
 - Oxford preprocessing and HDF5 conversion scripts
 - model configuration
-- small representative generated output sequence
+- small representative five-frame generated output sequence
 - documentation explaining scope, data preparation, model pipeline, and
   portfolio positioning
 

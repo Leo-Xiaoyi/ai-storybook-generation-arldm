@@ -37,9 +37,11 @@ The original thesis experiments were run on a GPU server. The public version
 keeps configuration and code structure, but excludes checkpoints and model
 weights.
 
-For the included `continuation` setup, each data item contains five consecutive
-story frames. The first frame and historical context are used for conditioning,
-and the model saves four generated continuation frames per sampled item.
+Each data item contains five consecutive story frames. In the thesis evaluation,
+representative ARLDM outputs were presented as five-frame story sequences. In
+the code's `continuation` sampling setup, the first frame can be used as
+conditioning context, so saved sample folders may contain four generated
+continuation frames for one item.
 
 ## Evaluation
 

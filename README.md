@@ -8,14 +8,17 @@ from story text. I adapted an Auto-Regressive Latent Diffusion Model (ARLDM)
 workflow to a custom Oxford Tree storybook dataset and used it to train, sample,
 debug, and evaluate sequential image generation.
 
-![Generated continuation sequence](examples/generated_sequence/sequence_preview.png)
+![Generated five-frame ARLDM sequence](examples/generated_sequence/sequence_preview.png)
 
-Each story item in the dataset contains five consecutive frames. In the
-`continuation` setup used here, the first frame and previous story context are
-used as conditioning information, and the model generates the four continuation
-frames shown above. I keep these four generated frames together as one sampling
-item instead of mixing visually similar images from different experiment
-folders.
+_Five-frame ARLDM story sequence from the thesis evaluation. The frames come
+from the same story prompt sequence rather than being mixed from separate
+samples._
+
+Each story item in the dataset contains five consecutive frames. The preview
+above uses the ARLDM row from my thesis evaluation to show one coherent
+five-frame story sequence. The code also keeps the continuation-style sampling
+setup, where internal sample outputs may be saved as four generated continuation
+frames because the first frame is used as conditioning context.
 
 ## What I Built
 
@@ -60,7 +63,7 @@ Storybook PDFs
     -> caption cleaning and five-frame story item grouping
     -> Oxford HDF5 dataset
     -> ARLDM training
-    -> four-frame continuation generation
+    -> five-frame story sequence generation / continuation sampling
     -> qualitative comparison and user evaluation
 ```
 

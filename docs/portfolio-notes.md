@@ -9,11 +9,12 @@ task. My work focused on preparing a new multimodal dataset, converting it into
 an efficient HDF5 training format, adapting dataset loading and configuration,
 running GPU experiments, comparing generated outputs, and evaluating coherence.
 
-The included preview sequence uses consecutive generated frames from the same
-sampling item. In ARLDM continuation mode, one sample produces four generated
-continuation frames conditioned on previous story context, so the public preview
-shows those four frames together rather than mixing outputs from different
-sample items.
+The included preview sequence uses the ARLDM row from the thesis evaluation and
+shows five frames from the same story prompt sequence. The code also keeps the
+continuation mode used during experimentation; in that setup, one saved sample
+folder may contain four generated continuation frames because the first frame is
+used as conditioning context. Do not mix frames from different sample items just
+to make a preview look longer.
 
 ## Avoid Overstating
 
