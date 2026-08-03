@@ -29,13 +29,17 @@ Oxford HDF5 dataset
     -> BLIP multimodal history encoding
     -> latent diffusion U-Net
     -> VAE decoding
-    -> generated story frames
+    -> generated continuation frames
     -> FID / qualitative evaluation
 ```
 
 The original thesis experiments were run on a GPU server. The public version
 keeps configuration and code structure, but excludes checkpoints and model
 weights.
+
+For the included `continuation` setup, each data item contains five consecutive
+story frames. The first frame and historical context are used for conditioning,
+and the model saves four generated continuation frames per sampled item.
 
 ## Evaluation
 

@@ -17,6 +17,10 @@ or HDF5 files. Those assets are large and may have distribution restrictions.
 6. Split data into train, validation, and test subsets.
 7. Store images and captions in HDF5 format for faster training I/O.
 
+In continuation mode, the model uses the five-frame story item as context and
+target structure, but saves four generated continuation frames for each sampled
+item.
+
 ## Included Scripts
 
 - `src/data_script/move.py` prepares cleaned captions and image folders.

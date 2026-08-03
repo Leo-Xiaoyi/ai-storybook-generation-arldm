@@ -10,9 +10,12 @@ debug, and evaluate sequential image generation.
 
 ![Generated continuation sequence](examples/generated_sequence/sequence_preview.png)
 
-The preview above shows four consecutive generated continuation frames from the
-same ARLDM sampling item. I keep them together as one sequence instead of
-mixing visually similar images from different experiment folders.
+Each story item in the dataset contains five consecutive frames. In the
+`continuation` setup used here, the first frame and previous story context are
+used as conditioning information, and the model generates the four continuation
+frames shown above. I keep these four generated frames together as one sampling
+item instead of mixing visually similar images from different experiment
+folders.
 
 ## What I Built
 
@@ -54,10 +57,10 @@ project structure, pipeline, and representative outputs.
 ```text
 Storybook PDFs
     -> OCR and image extraction
-    -> caption cleaning and story-frame grouping
+    -> caption cleaning and five-frame story item grouping
     -> Oxford HDF5 dataset
     -> ARLDM training
-    -> sequential story image generation
+    -> four-frame continuation generation
     -> qualitative comparison and user evaluation
 ```
 
