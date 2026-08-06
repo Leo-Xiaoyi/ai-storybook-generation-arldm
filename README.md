@@ -80,7 +80,7 @@ pipeline and does not include LLaMA2 model files or private model caches.
 ├── docs/
 │   ├── data-preparation.md
 │   ├── model-pipeline.md
-│   ├── portfolio-notes.md
+│   ├── project-scope.md
 │   └── release-safety.md
 ├── examples/
 │   └── generated_sequence/
