@@ -24,6 +24,3 @@ Large assets are intentionally not included:
 - LLaMA2 model files
 - Stable Diffusion model cache
 - server logs and experiment archives
-
-This repository is intended as a portfolio and documentation artifact, not as a
-fully reproducible release of the original thesis environment.

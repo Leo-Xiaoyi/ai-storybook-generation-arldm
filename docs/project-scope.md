@@ -1,12 +1,12 @@
 # Project Scope
 
-This repository is a cleaned public portfolio version of an undergraduate thesis
-project on storybook image sequence generation with diffusion models.
+This repository presents the ARLDM image-generation work from my undergraduate
+thesis on storybook generation. The thesis workflow also used LLaMA2-7B to
+generate story text for the adapted ARLDM pipeline.
 
 ## Public Repository Scope
 
-The public repository focuses on the parts that are useful, safe, and reasonable
-to review:
+The published materials include:
 
 - thesis-oriented ARLDM adaptation code
 - Oxford storybook dataset loader and preprocessing scripts
@@ -15,22 +15,18 @@ to review:
 - one representative generated sequence preview
 - documentation for the data and model pipeline
 
-It intentionally excludes raw storybook PDFs, extracted datasets, HDF5 files,
-model checkpoints, pretrained model caches, generated experiment archives,
-server notes, and administrative thesis materials.
+Raw storybook material, HDF5 datasets, model weights, and experiment archives
+remain external to the repository; see [release safety](release-safety.md).
 
-## Responsible Positioning
+## Technical Contributions
 
-This project is best read as an applied AI, multimodal data pipeline, and
-research-code adaptation project. The work focused on preparing a custom
-storybook dataset, converting sequential image-text data into an efficient HDF5
-format, adapting ARLDM data loading and configuration, running GPU experiments,
-comparing generated outputs, and evaluating sequence coherence.
+I prepared a custom Oxford Reading Tree dataset, converted sequential image-text
+data to HDF5, adapted ARLDM data loading and configuration, ran GPU experiments,
+and compared generated story sequences with SDXL V1.0. A CLI-based LLaMA2-7B
+stage supplied story captions for the end-to-end thesis workflow.
 
-The project adapts the public ARLDM research codebase. It should not be
-presented as an original model architecture, a production-ready storybook
-generator, or a repository that can reproduce the full thesis workflow without
-external datasets and model assets.
+The image-generation model builds on the public ARLDM research codebase, credited
+in [NOTICE.md](../NOTICE.md).
 
 ## Preview Sequence Notes
 
@@ -42,7 +38,7 @@ used as conditioning context.
 
 ## Resume-Friendly Summary
 
-Adapted an ARLDM-based diffusion pipeline for storybook image generation,
-building a custom Oxford Tree dataset from 234 storybooks, converting sequential
-image-text pairs into HDF5 format, and running GPU training/sampling experiments
-to evaluate cross-frame visual coherence.
+Built a thesis storybook-generation workflow combining LLaMA2-7B story text with
+an adapted ARLDM image pipeline; prepared 234 Oxford Reading Tree books across 9
+reading levels as five-frame HDF5 data, ran GPU training and sampling, and
+evaluated image coherence against SDXL V1.0.

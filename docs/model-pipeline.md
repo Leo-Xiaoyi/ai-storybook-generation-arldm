@@ -1,6 +1,8 @@
 # Model Pipeline
 
-The thesis framework used ARLDM as the core image-generation model.
+The thesis workflow used a CLI-based LLaMA2-7B stage to generate story captions
+from user requests, then passed those captions to an adapted ARLDM pipeline for
+sequential image generation. The published code focuses on the ARLDM stage.
 
 ARLDM differs from independent text-to-image generation because it conditions
 each generated frame on earlier story frames. This is useful for storybook
@@ -23,14 +25,11 @@ The original ARLDM implementation was adapted for the Oxford storybook dataset:
 The cleaned code keeps the original high-level flow:
 
 ```text
-Oxford HDF5 dataset
-    -> PyTorch Lightning DataModule
-    -> CLIP text encoding
-    -> BLIP multimodal history encoding
-    -> latent diffusion U-Net
-    -> VAE decoding
-    -> generated continuation frames
-    -> FID / qualitative evaluation
+Training: Oxford HDF5 data -> PyTorch Lightning DataModule -> adapted ARLDM
+Generation: story request -> LLaMA2-7B -> story captions -> adapted ARLDM
+            -> CLIP text encoding + BLIP multimodal history encoding
+            -> latent diffusion U-Net -> VAE decoding -> story frames
+Evaluation: generated frames -> FID / qualitative comparison / user survey
 ```
 
 The original thesis experiments were run on a GPU server. The public version
